@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "servertoserverservice";
+
+package servertoserverservice;
+
+service ServerToServerService {
+
+  rpc writeRead(Pair) returns (Void);
+
+}
+message Pair {
+  string key = 1;
+  string value = 2;
+  string IPPort = 3; // example:  0.0.0.0/8000
+  bool flagWriteRead = 4;
+}
+
+message Void {
+}

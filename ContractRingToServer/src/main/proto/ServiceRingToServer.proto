@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "ringtoserverservice";
+
+package ringtoserverservice;
+
+service RingToServerService {
+
+  rpc registerServer(Location) returns (Location);
+
+}
+
+message Location {
+  string IP = 1;
+  string port = 2;
+}
